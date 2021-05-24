@@ -1,0 +1,7 @@
+T = readtable("fileExcel.xlsx");
+leaders = string(T.x___(T.x____=="Руководитель"));
+workers = string(T.x___(T.x____ == "Исполнитель"));
+Roles = ["Руководители"; "Исполнители"];
+People = [sprintf("%s; ", leaders); sprintf("%s; ", workers)];
+Tab = table(Roles, People);
+writetable(Tab, "outFile.xlsx")
